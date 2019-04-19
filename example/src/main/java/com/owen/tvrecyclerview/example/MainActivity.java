@@ -46,14 +46,11 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements BaseFragment.FocusBorderHelper{
     private final String LOGTAG = MainActivity.class.getSimpleName();
     private final String[] tabNames = {
-            "VLayout", "Metro", "Spannable",
-            "Nested", "Menu&List", "Grid",
-            "V7Grid", "Staggered", "UpdateData"
+            "VLayout", "Metro", "Spannable","Staggered", "UpdateData"
     };
     private final String[] fragments = {
             VLayoutFragment.class.getName(), MetroFragment.class.getName(), SpannableFragment.class.getName(),
-            NestedFragment.class.getName(), ListFragment.class.getName(), GridFragment.class.getName(),
-            V7GridFragment.class.getName(), StaggeredFragment.class.getName(), UpdateDataFragment.class.getName()
+            StaggeredFragment.class.getName(), UpdateDataFragment.class.getName()
     };
 
     @BindView(R.id.tab_layout)

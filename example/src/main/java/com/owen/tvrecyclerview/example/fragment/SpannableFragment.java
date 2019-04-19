@@ -57,7 +57,7 @@ public class SpannableFragment extends BaseFragment {
         mRecyclerView.setSpacingWithMargins(10, 10);
 
         mAdapter = new SpannableAdapter(getContext(), mRecyclerView);
-        mAdapter.setDatas(ItemDatas.getDatas(60));
+        mAdapter.setDatas(ItemDatas.getDatas(13));
         mRecyclerView.setAdapter(mAdapter);
 
     }

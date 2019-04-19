@@ -6,21 +6,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="50pt"
-            android:layout_height="500pt"
-            android:text="b\nt\nn\n1"/>
-
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="50pt"
-            android:layout_height="500pt"
-            android:layout_alignParentRight="true"
-            android:text="b\nt\nn\n2"/>
-
+        android:layout_height="match_parent"
+        android:paddingLeft="78px"
+        android:paddingRight="78px"
+        android:gravity="center"
+        >
         <com.owen.tvrecyclerview.widget.TvRecyclerView
             android:id="@+id/list"
             style="@style/TwoWayView"
@@ -29,9 +19,12 @@
             android:layout_height="match_parent"
             android:layout_toLeftOf="@id/btn2"
             android:layout_toRightOf="@id/btn1"
+            android:layout_centerHorizontal="true"
             app:tv_numColumns="4"
             app:tv_numRows="4"
-            app:tv_layoutManager="SpannableGridLayoutManager"/>
+            app:tv_layoutManager="SpannableGridLayoutManager"
+            android:background="#00000000"
+            />
 
     </RelativeLayout>
     

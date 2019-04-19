@@ -167,7 +167,7 @@ public class SpannableGridLayoutManager extends GridLayoutManager {
 
     private int getChildWidth(int colSpan) {
 //        return (int)(getLanes().getLaneSize() * colSpan);
-        return (int)(getLanes().getLaneSize()) * colSpan;
+        return (int)((getLanes().getLaneSize()) * colSpan*1.629);
     }
 
     private int getChildHeight(int rowSpan) {

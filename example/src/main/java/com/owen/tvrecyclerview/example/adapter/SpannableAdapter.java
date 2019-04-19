@@ -59,16 +59,119 @@ public class SpannableAdapter extends CommonRecyclerViewAdapter<ItemBean> {
         final SpannableGridLayoutManager.LayoutParams lp =
                 (SpannableGridLayoutManager.LayoutParams) itemView.getLayoutParams();
 
-        final int span1 = (position == 0 || position == 6 || position == 13 || position == 5 ? 2 : 1);
-        final int span2 = (position == 0 || position == 6 || position == 13 ? 2 : position == 5 ? 4 : 1);
+        //final int span1 = (position == 0 || position == 6 || position == 13 || position == 5 ? 2 : 1);
+        //final int span2 = (position == 0 || position == 6 || position == 13 ? 2 : position == 5 ? 4 : 1);
 
-        final int colSpan = (isVertical ? span2 : span1);
-        final int rowSpan = (isVertical ? span1 : span2);
-        if (lp.rowSpan != rowSpan || lp.colSpan != colSpan) {
-            lp.rowSpan = rowSpan;
-            lp.colSpan = colSpan;
+        SpanParam sp = getSpanParamApp(position);
+
+        if (lp.rowSpan != sp.rowSpan || lp.colSpan != sp.colSpan) {
+            lp.rowSpan = sp.rowSpan;
+            lp.colSpan = sp.colSpan;
 
             itemView.setLayoutParams(lp);
         }
+    }
+
+
+    private SpanParam getSpanParamMy(int position){
+        int colSpan = 1;
+        int rowSpan = 1;
+        if(position==0 || position==1) {
+            colSpan=2;
+            rowSpan=2;
+        }else {
+            colSpan=1;
+            rowSpan=2;
+        }
+        return new SpanParam(rowSpan, colSpan);
+    }
+
+    private SpanParam getSpanParamJinxuan(int position){
+        int colSpan = 1;
+        int rowSpan = 1;
+        if(position==4) {
+            colSpan=2;
+            rowSpan=4;
+        }else if(position==5|| position==6){
+            colSpan=2;
+            rowSpan=2;
+        }else if(position==7|| position==8) {
+            colSpan=1;
+            rowSpan=2;
+        }else if(position==9) {
+            colSpan=3;
+            rowSpan=3;
+        }else if(position==11) {
+            colSpan=2;
+            rowSpan=3;
+        }else if(position==10) {
+            colSpan=3;
+            rowSpan=1;
+        } if(position==12) {
+            colSpan=2;
+            rowSpan=1;
+        }else if(position>12){
+            colSpan=1;
+            rowSpan=2;
+        }
+        return new SpanParam(rowSpan, colSpan);
+    }
+
+    private SpanParam getSpanParamDianying(int position){
+        int colSpan = 1;
+        int rowSpan = 1;
+        if(position==4) {
+            colSpan=4;
+            rowSpan=2;
+        }else if(position==5 || position==6||position==12 || position==13){
+            colSpan=2;
+            rowSpan=2;
+        }else if(position==11) {
+            colSpan=2;
+            rowSpan=4;
+        }else if(position>6 && position<11) {
+            colSpan=1;
+            rowSpan=2;
+        }
+        return new SpanParam(rowSpan, colSpan);
+    }
+
+    private SpanParam getSpanParamApp(int position){
+        int colSpan = 1;
+        int rowSpan = 1;
+        if(position==0) {
+            colSpan=2;
+            rowSpan=3;
+        }
+        if(position==3) {
+            colSpan=2;
+            rowSpan=2;
+        }
+        if(position==4) {
+            colSpan=2;
+            rowSpan=1;
+        }
+        if(position==7) {
+            colSpan=1;
+            rowSpan=2;
+        }
+        if(position==8) {
+            colSpan=2;
+            rowSpan=1;
+        }
+        if(position==10) {
+            colSpan=1;
+            rowSpan=2;
+        }
+        return new SpanParam(rowSpan, colSpan);
+    }
+
+   private static class  SpanParam {
+        public SpanParam(int row, int col){
+            this.rowSpan=row;
+            this.colSpan=col;
+        }
+        int colSpan=1;
+        int rowSpan=1;
     }
 }
